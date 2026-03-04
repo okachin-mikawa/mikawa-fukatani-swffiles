@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>SWF Test</title>
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body>
+
+<div id="swf-container"></div>
+
+<script>
+    window.addEventListener("load", () => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        document.getElementById("swf-container").appendChild(player);
+        player.load("test.swf");  // 同じフォルダに置いた SWF を読み込む
+    });
+</script>
+
+</body>
+</html>
